@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pacifique & Cie — PAËCO — Nouvelle-Calédonie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red: #db1212;
+  --bg-0: #0a0a0a;
+  --bg-1: #0f0f0f;
+  --bg-2: #121212;
+  --bg-3: #1a1a1a;
+  --bg-4: #1f1f1f;
+  --bg-5: #262626;
+  --bg-input: #2e2e2e;
+  --bg-btn: #3d3d3d;
+  --border-1: #2a2a2a;
+  --border-2: #333;
+  --border-3: #404040;
+  --label: #4a4a4a;
+  --muted: #595959;
+  --body: #b3b3b3;
+  --nav: #b8b8b8;
+  --drop: #737373;
+}
+
+html, body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-1);
+  color: #fff;
+  scroll-behavior: smooth;
+  line-height: 1;
+}
+
+/* ══ NAVBAR ══════════════════════════════════════════ */
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--border-2);
+}
+.navbar-inner {
+  max-width: 1440px; margin: 0 auto; padding: 0 48px;
+  height: 80px; display: flex; align-items: center;
+}
+.logo {
+  display: flex; align-items: center;
+  padding-left: 16px; position: relative; margin-right: 44px; flex-shrink: 0;
+}
+.logo-bar {
+  position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  width: 3px; height: 36px; background: var(--red); border-radius: 2px;
+}
+.logo-name { font-size: 14px; font-weight: 800; letter-spacing: .35px; display: block; margin-bottom: 4px; }
+.logo-sub  { font-size: 9px; font-weight: 400; letter-spacing: .14px; color: var(--drop); display: block; }
+
+.navlinks { display: flex; flex: 1; }
+.navlink {
+  position: relative; height: 80px; padding: 0 22px;
+  display: flex; align-items: center; gap: 5px;
+  font-size: 11px; font-weight: 400; letter-spacing: .13px;
+  color: var(--nav); cursor: pointer; white-space: nowrap;
+  transition: color .18s;
+}
+.navlink:hover { color: #fff; }
+.navlink.active { font-weight: 700; color: #fff; }
+.navlink.active::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 100%; height: 2px; background: var(--red);
+}
+.navlink-drop { font-size: 8px; color: var(--drop); }
+
+.nav-cta {
+  margin-left: auto; flex-shrink: 0;
+  padding: 10px 20px; border: 1px solid #808080; border-radius: 3px;
+  font-size: 11px; font-weight: 700; letter-spacing: .22px; cursor: pointer;
+  transition: background .18s, color .18s;
+}
+.nav-cta:hover { background: #fff; color: #111; }
+
+/* ══ HERO ════════════════════════════════════════════ */
+.hero {
+  position: relative; overflow: hidden;
+  min-height: 720px; background: #0d0d0d;
+  display: flex; align-items: center;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 1000px 700px at 72% 50%, #3a1010 0%, #1a0808 45%, #0d0d0d 100%);
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, rgba(8,8,8,.95) 0%, rgba(8,8,8,.6) 50%, rgba(8,8,8,.2) 100%);
+}
+.hero-strip {
+  position: absolute; left: 5vw; top: 50%; transform: translateY(-50%);
+  width: 6px; height: 120px; background: var(--red); border-radius: 3px;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 1440px; margin: 0 auto;
+  padding: 100px 144px;
+  display: flex; align-items: center; justify-content: space-between; gap: 48px;
+}
+.hero-left { flex: 0 1 660px; }
+.hero-badge {
+  display: inline-flex; align-items: center;
+  padding: 8px 16px; margin-bottom: 30px;
+  background: rgba(40,40,40,.92); border: 1px solid #595959; border-radius: 2px;
+  font-size: 11px; font-weight: 500; letter-spacing: .33px; color: #ccc;
+  animation: fadeUp .6s .1s both;
+}
+.hero-h1 {
+  font-size: clamp(48px, 5.5vw, 80px); font-weight: 800; line-height: 1.12;
+  margin-bottom: 22px;
+  animation: fadeUp .6s .2s both;
+}
+.hero-line { width: 80px; height: 4px; background: var(--red); border-radius: 2px; margin-bottom: 22px; animation: fadeUp .6s .3s both; }
+.hero-sub {
+  font-size: 18px; font-weight: 300; line-height: 1.7; color: #b3b3b3;
+  margin-bottom: 40px;
+  animation: fadeUp .6s .4s both;
+}
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeUp .6s .5s both; }
+.btn-white {
+  padding: 15px 32px; background: #f2f2f2; border-radius: 4px;
+  font-size: 14px; font-weight: 700; letter-spacing: .21px; color: #141414; cursor: pointer;
+  transition: background .18s;
+}
+.btn-white:hover { background: #fff; }
+.btn-ghost {
+  padding: 15px 32px; border: 1px solid rgba(178,178,178,.35); border-radius: 4px;
+  font-size: 14px; font-weight: 500; letter-spacing: .21px; color: #b3b3b3; cursor: pointer;
+  transition: border-color .18s, color .18s;
+}
+.btn-ghost:hover { border-color: rgba(200,200,200,.7); color: #fff; }
+
+.hero-right { flex: 0 0 360px; animation: fadeUp .7s .3s both; }
+.promo-card {
+  background: #1c1c1c; border: 1px solid var(--border-3);
+  border-radius: 8px; overflow: hidden; padding: 28px;
+  border-top: 3px solid #3d3d3d;
+}
+.promo-label { font-size: 10px; font-weight: 500; letter-spacing: .3px; color: #555; margin-bottom: 16px; }
+.promo-title { font-size: 26px; font-weight: 800; line-height: 1.25; margin-bottom: 16px; }
+.promo-desc { font-size: 14px; font-weight: 400; line-height: 1.6; color: #b3b3b3; margin-bottom: 24px; }
+.promo-btn {
+  display: inline-block; padding: 11px 22px;
+  border: 1px solid #999; border-radius: 4px;
+  font-size: 12px; font-weight: 700; letter-spacing: .12px; color: #e6e6e6; cursor: pointer;
+  transition: border-color .18s, color .18s;
+}
+.promo-btn:hover { border-color: #fff; color: #fff; }
+
+.scroll-hint {
+  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.scroll-line { width: 1px; height: 40px; background: rgba(178,178,178,.35); }
+.scroll-text { font-size: 10px; letter-spacing: .3px; color: rgba(178,178,178,.35); }
+
+/* ══ STATS ═══════════════════════════════════════════ */
+.stats { background: var(--bg-3); border-top: 2px solid var(--red); }
+.stats-inner {
+  max-width: 1440px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4,1fr);
+}
+.stat {
+  padding: 32px 16px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  border-right: 1px solid var(--border-1);
+}
+.stat:last-child { border-right: none; }
+.stat-num { font-size: 36px; font-weight: 800; line-height: 1; }
+.stat-lbl { font-size: 12px; font-weight: 400; letter-spacing: .2px; color: rgba(255,255,255,.6); }
+
+/* ══ INTRO ═══════════════════════════════════════════ */
+.section-intro { background: var(--bg-2); padding: 96px 0; }
+.intro-inner {
+  max-width: 1440px; margin: 0 auto; padding: 0 144px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+}
+.intro-left { display: flex; flex-direction: column; gap: 28px; }
+.eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .33px; color: var(--label); text-transform: uppercase; }
+.intro-h2 { font-size: 42px; font-weight: 800; line-height: 1.22; }
+.intro-body { font-size: 16px; font-weight: 300; line-height: 1.75; color: var(--body); }
+.link-row { display: flex; align-items: center; gap: 14px; cursor: pointer; }
+.link-dash { width: 32px; height: 2px; background: var(--red); flex-shrink: 0; }
+.link-lbl { font-size: 13px; font-weight: 500; letter-spacing: .26px; color: #fff; transition: color .18s; }
+.link-row:hover .link-lbl { color: var(--body); }
+
+.intro-right {
+  position: relative; border-radius: 8px; overflow: hidden;
+  aspect-ratio: 16/10; background: #2e1a1a;
+  display: flex; align-items: center; justify-content: center;
+}
+.placeholder-txt { font-size: 13px; color: rgba(178,178,178,.35); }
+.intro-quote {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 48px 28px 28px;
+  background: linear-gradient(to top, rgba(13,13,13,.92) 0%, transparent 100%);
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.q-bar { width: 3px; flex-shrink: 0; align-self: stretch; min-height: 40px; background: var(--red); border-radius: 2px; }
+.q-txt { font-size: 15px; font-weight: 300; font-style: italic; line-height: 1.6; }
+
+/* ══ SPECTACLES ══════════════════════════════════════ */
+.section-spec { background: var(--bg-4); padding: 80px 0; }
+.spec-inner { max-width: 1440px; margin: 0 auto; padding: 0 144px; }
+
+.sec-hdr { display: flex; align-items: flex-end; gap: 24px; margin-bottom: 36px; }
+.sec-hdr-left { display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; }
+.sec-hdr-title { font-size: 32px; font-weight: 800; line-height: 1; }
+.sec-hdr-line { flex: 1; height: 1px; background: #333; align-self: center; }
+.sec-hdr-link { font-size: 13px; font-weight: 500; letter-spacing: .2px; color: var(--label); cursor: pointer; flex-shrink: 0; white-space: nowrap; transition: color .18s; }
+.sec-hdr-link:hover { color: var(--body); }
+
+.filters { display: flex; gap: 10px; margin-bottom: 36px; flex-wrap: wrap; }
+.pill { padding: 8px 20px; border-radius: 20px; font-size: 13px; cursor: pointer; transition: all .18s; white-space: nowrap; }
+.pill.on  { background: #e0e0e0; font-weight: 700; color: #1a1a1a; }
+.pill.off { border: 1px solid #555; font-weight: 400; color: var(--body); }
+.pill.off:hover { border-color: #888; color: #ddd; }
+
+.spec-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.spec-card { background: var(--bg-5); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+.spec-img {
+  height: 200px; display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: rgba(178,178,178,.35);
+}
+.spec-body { padding: 20px 20px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.spec-badge {
+  display: inline-block; padding: 5px 10px;
+  background: var(--bg-btn); border-radius: 3px;
+  font-size: 10px; font-weight: 700; letter-spacing: .2px; color: #fff; width: fit-content;
+}
+.spec-title { font-size: 20px; font-weight: 800; margin-top: 2px; }
+.spec-desc { font-size: 13px; font-weight: 400; line-height: 1.6; color: var(--body); flex: 1; }
+.spec-link { font-size: 12px; font-weight: 500; color: var(--label); cursor: pointer; margin-top: 4px; transition: color .18s; }
+.spec-link:hover { color: var(--body); }
+
+/* ══ ACTUS ═══════════════════════════════════════════ */
+.section-actus { background: var(--bg-2); padding: 80px 0; }
+.actus-inner { max-width: 1440px; margin: 0 auto; padding: 0 144px; }
+.actus-hdr { margin-bottom: 40px; display: flex; flex-direction: column; gap: 10px; }
+.actus-title { font-size: 32px; font-weight: 800; }
+
+.actu-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.actu-card {
+  background: var(--bg-5); border-radius: 8px; padding: 28px;
+  display: flex; flex-direction: column;
+  border-top: 3px solid var(--bg-btn);
+}
+.actu-date { font-size: 11px; font-weight: 500; letter-spacing: .22px; color: var(--label); margin-bottom: 14px; }
+.actu-title { font-size: 18px; font-weight: 700; line-height: 1.45; margin-bottom: 14px; }
+.actu-desc { font-size: 13px; font-weight: 400; line-height: 1.6; color: var(--body); flex: 1; margin-bottom: 32px; }
+.actu-link { font-size: 12px; font-weight: 500; color: var(--label); cursor: pointer; transition: color .18s; }
+.actu-link:hover { color: var(--body); }
+
+/* ══ FORMATION ═══════════════════════════════════════ */
+.section-form { background: var(--bg-4); padding: 90px 0; overflow: hidden; position: relative; }
+.section-form::after {
+  content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 40%;
+  background: #1a0f0f; z-index: 0;
+}
+.form-inner {
+  position: relative; z-index: 1;
+  max-width: 1440px; margin: 0 auto; padding: 0 144px;
+}
+.form-content { max-width: 620px; display: flex; flex-direction: column; gap: 0; }
+.form-h2 { font-size: 40px; font-weight: 800; line-height: 1.22; margin: 14px 0 20px; }
+.form-body { font-size: 16px; font-weight: 300; line-height: 1.65; color: var(--body); margin-bottom: 36px; }
+.form-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-dark {
+  padding: 14px 28px; background: var(--bg-btn); border-radius: 4px;
+  font-size: 13px; font-weight: 700; letter-spacing: .2px; cursor: pointer;
+  transition: background .18s;
+}
+.btn-dark:hover { background: #4d4d4d; }
+.btn-outline2 {
+  padding: 14px 28px; border: 1px solid #636363; border-radius: 4px;
+  font-size: 13px; font-weight: 500; letter-spacing: .2px; color: var(--body); cursor: pointer;
+  transition: border-color .18s, color .18s;
+}
+.btn-outline2:hover { border-color: #aaa; color: #ddd; }
+
+/* ══ CONTACT ═════════════════════════════════════════ */
+.section-contact { background: var(--bg-2); padding: 96px 0; }
+.contact-inner {
+  max-width: 1440px; margin: 0 auto; padding: 0 144px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start;
+}
+.contact-h2 { font-size: 40px; font-weight: 800; line-height: 1.2; margin: 12px 0 48px; }
+.contact-items { display: flex; flex-direction: column; gap: 28px; }
+.c-item { display: flex; gap: 20px; align-items: center; }
+.c-icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  border: 1px solid rgba(89,89,89,.35); border-radius: 6px;
+  background: rgba(77,77,77,.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: #555;
+}
+.c-info { display: flex; flex-direction: column; gap: 4px; }
+.c-label { font-size: 11px; font-weight: 500; letter-spacing: .22px; color: var(--muted); }
+.c-val { font-size: 16px; font-weight: 500; }
+
+.contact-form {
+  background: var(--bg-4); border: 1px solid rgba(89,89,89,.18);
+  border-radius: 12px; padding: 40px;
+  display: flex; flex-direction: column; gap: 18px;
+}
+.form-title { font-size: 20px; font-weight: 700; }
+.f-input {
+  width: 100%; padding: 14px 16px;
+  background: var(--bg-input); border: 1px solid rgba(89,89,89,.22);
+  border-radius: 6px; font-family: 'Inter', sans-serif;
+  font-size: 14px; color: #fff; outline: none;
+  transition: border-color .18s;
+}
+.f-input::placeholder { color: #555; }
+.f-input:focus { border-color: rgba(178,178,178,.45); }
+textarea.f-input { height: 110px; resize: none; }
+.f-submit {
+  width: 100%; padding: 16px;
+  background: var(--bg-btn); border: none; border-radius: 6px;
+  font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: .21px;
+  color: #fff; cursor: pointer; transition: background .18s;
+}
+.f-submit:hover { background: #4d4d4d; }
+
+/* ══ FOOTER ══════════════════════════════════════════ */
+.footer { background: var(--bg-0); border-top: 1px solid #1e1e1e; padding: 60px 0 0; }
+.footer-grid {
+  max-width: 1440px; margin: 0 auto; padding: 0 144px 48px;
+  display: grid; grid-template-columns: 1fr auto auto auto; gap: 80px; align-items: start;
+}
+.footer-brand-name { font-size: 18px; font-weight: 800; letter-spacing: .36px; margin-bottom: 8px; }
+.footer-brand-sub  { font-size: 13px; font-weight: 300; color: var(--muted); }
+.f-col { display: flex; flex-direction: column; gap: 12px; }
+.f-col-title { font-size: 11px; font-weight: 700; letter-spacing: .24px; margin-bottom: 2px; }
+.f-col a { font-size: 13px; font-weight: 400; color: var(--muted); text-decoration: none; transition: color .18s; }
+.f-col a:hover { color: var(--body); }
+.footer-copy {
+  max-width: 1440px; margin: 0 auto; padding: 20px 144px;
+  border-top: 1px solid #1a1a1a;
+  font-size: 12px; color: var(--muted);
+}
+
+/* ══ ANIMATIONS ══════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <div class="logo">
+      <div class="logo-bar"></div>
+      <div>
+        <span class="logo-name">PACIFIQUE &amp; CIE</span>
+        <span class="logo-sub">PAËCO — NOUVELLE-CALÉDONIE</span>
+      </div>
+    </div>
+    <div class="navlinks">
+      <div class="navlink active">ACCUEIL</div>
+      <div class="navlink">SPECTACLES <span class="navlink-drop">▾</span></div>
+      <div class="navlink">Z'ACTUS</div>
+      <div class="navlink">FORMATION <span class="navlink-drop">▾</span></div>
+      <div class="navlink">THÉÂTRE <span class="navlink-drop">▾</span></div>
+      <div class="navlink">À PROPOS <span class="navlink-drop">▾</span></div>
+    </div>
+    <div class="nav-cta">RÉSERVATIONS</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-strip"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">TROUPE DE THÉÂTRE — NOUVELLE-CALÉDONIE</div>
+      <h1 class="hero-h1">Dire le monde<br>tel qu'il est.</h1>
+      <div class="hero-line"></div>
+      <p class="hero-sub">Depuis 1997, Pacifique &amp; Cie porte la voix<br>du théâtre contemporain en Nouvelle-Calédonie.</p>
+      <div class="hero-btns">
+        <div class="btn-white">VOIR LES SPECTACLES</div>
+        <div class="btn-ghost">QUI SOMMES-NOUS ?</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="promo-card">
+        <p class="promo-label">À L'AFFICHE</p>
+        <h3 class="promo-title">Spectacle<br>2025</h3>
+        <p class="promo-desc">Découvrez la nouvelle création<br>de la troupe Pacifique &amp; Cie</p>
+        <div class="promo-btn">EN SAVOIR PLUS →</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">SCROLL</span>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stat"><span class="stat-num">27+</span><span class="stat-lbl">ANNÉES D'EXISTENCE</span></div>
+    <div class="stat"><span class="stat-num">60+</span><span class="stat-lbl">SPECTACLES CRÉÉS</span></div>
+    <div class="stat"><span class="stat-num">500+</span><span class="stat-lbl">REPRÉSENTATIONS</span></div>
+    <div class="stat"><span class="stat-num">20 000+</span><span class="stat-lbl">SPECTATEURS TOUCHÉS</span></div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="section-intro">
+  <div class="intro-inner">
+    <div class="intro-left">
+      <span class="eyebrow">QUI SOMMES-NOUS</span>
+      <h2 class="intro-h2">Le théâtre comme<br>miroir du monde</h2>
+      <p class="intro-body">De tout temps, dans toutes les cultures, le théâtre a servi à dire le monde. Pacifique &amp; Cie perpétue cette tradition depuis 1997 au cœur du Pacifique.</p>
+      <div class="link-row">
+        <div class="link-dash"></div>
+        <span class="link-lbl">EN SAVOIR PLUS</span>
+      </div>
+    </div>
+    <div class="intro-right">
+      <span class="placeholder-txt">[ Photo de spectacle ]</span>
+      <div class="intro-quote">
+        <div class="q-bar"></div>
+        <p class="q-txt">"Dire le monde dont on rêve."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECTACLES -->
+<section class="section-spec">
+  <div class="spec-inner">
+    <div class="sec-hdr">
+      <div class="sec-hdr-left">
+        <span class="eyebrow">PROGRAMMATION</span>
+        <span class="sec-hdr-title">Nos Spectacles</span>
+      </div>
+      <div class="sec-hdr-line"></div>
+      <span class="sec-hdr-link">VOIR TOUS LES SPECTACLES →</span>
+    </div>
+    <div class="filters">
+      <div class="pill on">Cette année</div>
+      <div class="pill off">2021–2024</div>
+      <div class="pill off">2015–2020</div>
+      <div class="pill off">2011–2015</div>
+      <div class="pill off">Archives</div>
+    </div>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="spec-img" style="background:#2e1a1a;">[ Photo 1 ]</div>
+        <div class="spec-body">
+          <span class="spec-badge">À L'AFFICHE</span>
+          <div class="spec-title">Spectacle 2025</div>
+          <p class="spec-desc">La nouvelle création de la troupe, une pièce contemporaine sur le vivre-ensemble.</p>
+          <span class="spec-link">Voir le spectacle →</span>
+        </div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-img" style="background:#331a1a;">[ Photo 2 ]</div>
+        <div class="spec-body">
+          <span class="spec-badge">TOURNÉE</span>
+          <div class="spec-title">Le Monde d'Hier</div>
+          <p class="spec-desc">Un voyage théâtral à travers les mémoires collectives du Pacifique.</p>
+          <span class="spec-link">Voir le spectacle →</span>
+        </div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-img" style="background:#381a1a;">[ Photo 3 ]</div>
+        <div class="spec-body">
+          <span class="spec-badge">REPRISE</span>
+          <div class="spec-title">Racines</div>
+          <p class="spec-desc">Le spectacle culte de Pacifique &amp; Cie, de retour pour une série de représentations.</p>
+          <span class="spec-link">Voir le spectacle →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTUS -->
+<section class="section-actus">
+  <div class="actus-inner">
+    <div class="actus-hdr">
+      <span class="eyebrow">DERNIÈRES NOUVELLES</span>
+      <h2 class="actus-title">Les Z'Actus</h2>
+    </div>
+    <div class="actu-grid">
+      <div class="actu-card">
+        <p class="actu-date">AVRIL 2025</p>
+        <h3 class="actu-title">Nouvelle création annoncée</h3>
+        <p class="actu-desc">La troupe dévoile son prochain spectacle pour la saison 2025.</p>
+        <span class="actu-link">Lire la suite →</span>
+      </div>
+      <div class="actu-card">
+        <p class="actu-date">MARS 2025</p>
+        <h3 class="actu-title">Tournée dans le Pacifique</h3>
+        <p class="actu-desc">Pacifique &amp; Cie part à la rencontre des îles voisines.</p>
+        <span class="actu-link">Lire la suite →</span>
+      </div>
+      <div class="actu-card">
+        <p class="actu-date">FÉVRIER 2025</p>
+        <h3 class="actu-title">Atelier jeune public</h3>
+        <p class="actu-desc">Stage de théâtre ouvert aux 8-15 ans, inscriptions ouvertes.</p>
+        <span class="actu-link">Lire la suite →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATION -->
+<section class="section-form">
+  <div class="form-inner">
+    <div class="form-content">
+      <span class="eyebrow">FORMATION</span>
+      <h2 class="form-h2">Apprenez le théâtre<br>avec nos ateliers</h2>
+      <p class="form-body">Ateliers tout public, stages intensifs, théâtre d'insertion…<br>Découvrez nos programmes de formation.</p>
+      <div class="form-btns">
+        <div class="btn-dark">ATELIERS &amp; STAGES</div>
+        <div class="btn-outline2">PARTAGE &amp; INSERTION</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section-contact">
+  <div class="contact-inner">
+    <div>
+      <span class="eyebrow">NOUS CONTACTER</span>
+      <h2 class="contact-h2">Parlons<br>Théâtre</h2>
+      <div class="contact-items">
+        <div class="c-item">
+          <div class="c-icon">✉</div>
+          <div class="c-info">
+            <span class="c-label">EMAIL</span>
+            <span class="c-val">pacifique.et.cie@canl.nc</span>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">☎</div>
+          <div class="c-info">
+            <span class="c-label">TÉLÉPHONE</span>
+            <span class="c-val">+687 27 82 11</span>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">◎</div>
+          <div class="c-info">
+            <span class="c-label">RÉSEAUX</span>
+            <span class="c-val">Facebook — @PacifiqueCie</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <p class="form-title">Envoyez-nous un message</p>
+      <input class="f-input" type="text" placeholder="Nom &amp; Prénom"/>
+      <input class="f-input" type="email" placeholder="Adresse email"/>
+      <input class="f-input" type="tel" placeholder="Téléphone (optionnel)"/>
+      <textarea class="f-input" placeholder="Votre message..."></textarea>
+      <button class="f-submit">ENVOYER LE MESSAGE</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand-name">PACIFIQUE &amp; CIE</p>
+      <p class="footer-brand-sub">Troupe de théâtre — Nouvelle-Calédonie</p>
+    </div>
+    <div class="f-col">
+      <span class="f-col-title">SPECTACLES</span>
+      <a href="#">Cette année</a>
+      <a href="#">2021–2024</a>
+      <a href="#">2015–2020</a>
+      <a href="#">Archives</a>
+    </div>
+    <div class="f-col">
+      <span class="f-col-title">SERVICES</span>
+      <a href="#">Théâtre Forum</a>
+      <a href="#">Théâtre en Entreprise</a>
+      <a href="#">Dans le Pacifique</a>
+    </div>
+    <div class="f-col">
+      <span class="f-col-title">NOUS</span>
+      <a href="#">Qui sommes-nous ?</a>
+      <a href="#">Formation</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    © 2025 Pacifique &amp; Cie — PAËCO. Tous droits réservés. Nouvelle-Calédonie.
+  </div>
+</footer>
+
+</body>
+</html>
