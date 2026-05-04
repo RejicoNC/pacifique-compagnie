@@ -91,7 +91,7 @@ html, body {
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 1000px 700px at 72% 50%, #3a1010 0%, #1a0808 45%, #0d0d0d 100%);
+  background: url('https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/2117172/123481_362731.jpg') center/cover no-repeat;
 }
 .hero-overlay {
   position: absolute; inset: 0;
@@ -265,7 +265,8 @@ html, body {
 .section-form { background: var(--bg-4); padding: 90px 0; overflow: hidden; position: relative; }
 .section-form::after {
   content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 40%;
-  background: #1a0f0f; z-index: 0;
+  background: linear-gradient(to right, #1a0f0f 0%, rgba(26,15,15,.55) 40%), url('https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/2117172/91638_351075.jpeg') center/cover no-repeat;
+  z-index: 0;
 }
 .form-inner {
   position: relative; z-index: 1;
@@ -362,12 +363,8 @@ textarea.f-input { height: 110px; resize: none; }
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="navbar-inner">
-    <div class="logo">
-      <div class="logo-bar"></div>
-      <div>
-        <span class="logo-name">PACIFIQUE &amp; CIE</span>
-        <span class="logo-sub">PAËCO — NOUVELLE-CALÉDONIE</span>
-      </div>
+    <div class="logo" style="padding-left:0;">
+      <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_auto/2117172/557291_464358.jpeg" alt="PAËCO — Pacifique &amp; Cie" style="height:56px; width:auto; display:block;">
     </div>
     <div class="navlinks">
       <div class="navlink active">ACCUEIL</div>
@@ -398,11 +395,14 @@ textarea.f-input { height: 110px; resize: none; }
       </div>
     </div>
     <div class="hero-right">
-      <div class="promo-card">
-        <p class="promo-label">À L'AFFICHE</p>
-        <h3 class="promo-title">Spectacle<br>2025</h3>
-        <p class="promo-desc">Découvrez la nouvelle création<br>de la troupe Pacifique &amp; Cie</p>
-        <div class="promo-btn">EN SAVOIR PLUS →</div>
+      <div class="promo-card" style="padding:0;">
+        <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/2117172/61697_473373.jpeg" alt="Bal(l)ade Crépusculaire" style="width:100%; display:block; max-height:200px; object-fit:cover;">
+        <div style="padding:20px 24px 24px;">
+          <p class="promo-label">À L'AFFICHE — SAISON 2026</p>
+          <h3 class="promo-title">Bal(l)ade<br>Crépusculaire</h3>
+          <p class="promo-desc">Centre Culturel du Mont-Dore<br>29 mai — 7 juin 2026</p>
+          <div class="promo-btn">EN SAVOIR PLUS →</div>
+        </div>
       </div>
     </div>
   </div>
@@ -415,7 +415,7 @@ textarea.f-input { height: 110px; resize: none; }
 <!-- STATS -->
 <section class="stats">
   <div class="stats-inner">
-    <div class="stat"><span class="stat-num">27+</span><span class="stat-lbl">ANNÉES D'EXISTENCE</span></div>
+    <div class="stat"><span class="stat-num">29+</span><span class="stat-lbl">ANNÉES D'EXISTENCE</span></div>
     <div class="stat"><span class="stat-num">60+</span><span class="stat-lbl">SPECTACLES CRÉÉS</span></div>
     <div class="stat"><span class="stat-num">500+</span><span class="stat-lbl">REPRÉSENTATIONS</span></div>
     <div class="stat"><span class="stat-num">20 000+</span><span class="stat-lbl">SPECTATEURS TOUCHÉS</span></div>
@@ -435,7 +435,7 @@ textarea.f-input { height: 110px; resize: none; }
       </div>
     </div>
     <div class="intro-right">
-      <span class="placeholder-txt">[ Photo de spectacle ]</span>
+      <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/2117172/123481_362731.jpg" alt="Spectacle Pacifique &amp; Cie sur scène" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
       <div class="intro-quote">
         <div class="q-bar"></div>
         <p class="q-txt">"Dire le monde dont on rêve."</p>
@@ -464,29 +464,35 @@ textarea.f-input { height: 110px; resize: none; }
     </div>
     <div class="spec-grid">
       <div class="spec-card">
-        <div class="spec-img" style="background:#2e1a1a;">[ Photo 1 ]</div>
+        <div class="spec-img" style="background:#1a1a1a; padding:0; overflow:hidden;">
+          <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/2117172/743244_829130.jpg" alt="Voleurs de Pardons — Hienghène" style="width:100%; height:200px; object-fit:cover; display:block;">
+        </div>
+        <div class="spec-body">
+          <span class="spec-badge">ENTRÉE LIBRE</span>
+          <div class="spec-title">Voleurs de Pardons</div>
+          <p class="spec-desc">Hienghène — 23 avril 2026 à 19h30. Centre Culturel Provincial Goa Ma Bwérhia. De Sophiène Derougas, mis en scène par Isabelle de Haas.</p>
+          <span class="spec-link">Voir le spectacle →</span>
+        </div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-img" style="background:#1a1a1a; padding:0; overflow:hidden;">
+          <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/2117172/349275_877522.jpg" alt="Voleurs de Pardons — Mont-Dore" style="width:100%; height:200px; object-fit:cover; display:block;">
+        </div>
         <div class="spec-body">
           <span class="spec-badge">À L'AFFICHE</span>
-          <div class="spec-title">Spectacle 2025</div>
-          <p class="spec-desc">La nouvelle création de la troupe, une pièce contemporaine sur le vivre-ensemble.</p>
+          <div class="spec-title">Voleurs de Pardons</div>
+          <p class="spec-desc">Mont-Dore — 22 mai 2026 à 19h. Centre Culturel du Mont-Dore. Réservations : 41 90 90 ou eticket.nc.</p>
           <span class="spec-link">Voir le spectacle →</span>
         </div>
       </div>
       <div class="spec-card">
-        <div class="spec-img" style="background:#331a1a;">[ Photo 2 ]</div>
-        <div class="spec-body">
-          <span class="spec-badge">TOURNÉE</span>
-          <div class="spec-title">Le Monde d'Hier</div>
-          <p class="spec-desc">Un voyage théâtral à travers les mémoires collectives du Pacifique.</p>
-          <span class="spec-link">Voir le spectacle →</span>
+        <div class="spec-img" style="background:#1a1a1a; padding:0; overflow:hidden;">
+          <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/2117172/61697_473373.jpeg" alt="Bal(l)ade Crépusculaire" style="width:100%; height:200px; object-fit:cover; display:block;">
         </div>
-      </div>
-      <div class="spec-card">
-        <div class="spec-img" style="background:#381a1a;">[ Photo 3 ]</div>
         <div class="spec-body">
-          <span class="spec-badge">REPRISE</span>
-          <div class="spec-title">Racines</div>
-          <p class="spec-desc">Le spectacle culte de Pacifique &amp; Cie, de retour pour une série de représentations.</p>
+          <span class="spec-badge">SAISON 2026</span>
+          <div class="spec-title">Bal(l)ade Crépusculaire</div>
+          <p class="spec-desc">Mont-Dore — 29 mai au 7 juin 2026. Centre Culturel du Mont-Dore. Les Défrayés présentent.</p>
           <span class="spec-link">Voir le spectacle →</span>
         </div>
       </div>
@@ -503,21 +509,21 @@ textarea.f-input { height: 110px; resize: none; }
     </div>
     <div class="actu-grid">
       <div class="actu-card">
-        <p class="actu-date">AVRIL 2025</p>
-        <h3 class="actu-title">Nouvelle création annoncée</h3>
-        <p class="actu-desc">La troupe dévoile son prochain spectacle pour la saison 2025.</p>
+        <p class="actu-date">AVRIL 2026</p>
+        <h3 class="actu-title">Voleurs de Pardons à Hienghène</h3>
+        <p class="actu-desc">La troupe se déplace au Centre Culturel Provincial Goa Ma Bwérhia pour une représentation en entrée libre. Une pièce de Sophiène Derougas, mise en scène par Isabelle de Haas.</p>
+        <span class="actu-link">Lire la suite →</span>
+      </div>
+      <div class="actu-card" style="border-top-color: var(--red);">
+        <p class="actu-date">MAI 2026</p>
+        <h3 class="actu-title">Voleurs de Pardons — Mont-Dore</h3>
+        <p class="actu-desc">Dernière chance de voir Voleurs de Pardons avant la grande saison. Vendredi 22 mai à 19h au Centre Culturel du Mont-Dore. Réservations sur eticket.nc.</p>
         <span class="actu-link">Lire la suite →</span>
       </div>
       <div class="actu-card">
-        <p class="actu-date">MARS 2025</p>
-        <h3 class="actu-title">Tournée dans le Pacifique</h3>
-        <p class="actu-desc">Pacifique &amp; Cie part à la rencontre des îles voisines.</p>
-        <span class="actu-link">Lire la suite →</span>
-      </div>
-      <div class="actu-card">
-        <p class="actu-date">FÉVRIER 2025</p>
-        <h3 class="actu-title">Atelier jeune public</h3>
-        <p class="actu-desc">Stage de théâtre ouvert aux 8-15 ans, inscriptions ouvertes.</p>
+        <p class="actu-date">MAI — JUIN 2026</p>
+        <h3 class="actu-title">Bal(l)ade Crépusculaire — Saison 2026</h3>
+        <p class="actu-desc">La nouvelle création des Défrayés au Centre Culturel du Mont-Dore, du 29 mai au 7 juin 2026. Mise en scène Isabelle de Haas, musiques David Leroy.</p>
         <span class="actu-link">Lire la suite →</span>
       </div>
     </div>
@@ -608,7 +614,7 @@ textarea.f-input { height: 110px; resize: none; }
     </div>
   </div>
   <div class="footer-copy">
-    © 2025 Pacifique &amp; Cie — PAËCO. Tous droits réservés. Nouvelle-Calédonie.
+    © 2026 Pacifique &amp; Cie — PAËCO. Tous droits réservés. Nouvelle-Calédonie.
   </div>
 </footer>
 
